@@ -15,7 +15,9 @@ class Student < ActiveRecord::Base
   has_many :classrooms, through: :classroom_students
 
   def self.search(query)
-
+    if query == ''
+      Student.all
+    else
     s = []
     Student.all.each do |student|
       if student.name.include?(query)
@@ -23,6 +25,7 @@ class Student < ActiveRecord::Base
       end
     end
     s
+  end
   end
 
 end
