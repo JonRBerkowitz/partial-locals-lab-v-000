@@ -22,6 +22,7 @@ class Student < ActiveRecord::Base
         s << student
       end
     end
+    s
   end
 
 end
