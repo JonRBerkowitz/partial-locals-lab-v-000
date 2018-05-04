@@ -19,9 +19,7 @@ class Student < ActiveRecord::Base
       Student.all
     end
     Student.all.map do |student|
-      if student.name.include?(query)
-        student
-      end
+      student.name
     end
   end
 
