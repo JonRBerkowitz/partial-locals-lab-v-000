@@ -20,7 +20,7 @@ class Student < ActiveRecord::Base
     else
     s = []
     Student.all.each do |student|
-      if student.name.include?(query)
+      if student.name.downcase.include?(query.downcase)
         s << student
       end
     end
