@@ -17,7 +17,7 @@ class Student < ActiveRecord::Base
   def self.search(query)
     if query == ''
       Student.all
-    else
+    end
     Student.all.map do |student|
       if student.name.include?(query)
         student
