@@ -15,9 +15,7 @@ class Student < ActiveRecord::Base
   has_many :classrooms, through: :classroom_students
 
   def self.search(query)
-    if query == ''
-      Student.all
-    end
+
     Student.all.map do |student|
       student.name
     end
